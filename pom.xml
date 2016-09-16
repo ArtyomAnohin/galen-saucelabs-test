@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>galen-saucelabs-test</groupId>
+    <artifactId>galen-saucelabs-test</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+<dependencies>
+    <!-- http://mvnrepository.com/artifact/org.testng/testng -->
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>6.9.10</version>
+    </dependency>
+    <!-- http://mvnrepository.com/artifact/com.galenframework/galen-java-support -->
+    <dependency>
+        <groupId>com.galenframework</groupId>
+        <artifactId>galen-java-support</artifactId>
+        <version>2.3.0</version>
+    </dependency>
+    <!-- http://mvnrepository.com/artifact/com.saucelabs/sauce_testng -->
+    <dependency>
+        <groupId>com.saucelabs</groupId>
+        <artifactId>sauce_testng</artifactId>
+        <version>2.1.21</version>
+    </dependency>
+    <!-- http://mvnrepository.com/artifact/junit/junit -->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+    </dependency>
+
+</dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
+                    <parallel>methods</parallel>
+                    <threadCount>4</threadCount>
+                    <properties>
+                        <property>
+                            <name>dataproviderthreadcount</name>
+                            <value>4</value>
+                        </property>
+                        <property><name>usedefaultlisteners</name><value>false</value></property>
+                        <property>
+                            <name>listener</name>
+                            <value>com.galenframework.testng.GalenTestNgReportsListener</value>
+                        </property>
+                    </properties>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

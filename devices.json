@@ -1,0 +1,32 @@
+[
+	{
+		"os": "android",
+		"platform": "ANDROID",
+		"browser": "android",
+		"browser-version": "5.1",
+		"device": "Android Emulator",
+		"device-orientation": "portrait"
+	},
+	{
+		"os": "iphone",
+		"platform": "UNIX",
+		"browser": "iphone",
+		"browser-version": "9.3",
+		"device": "iPhone Simulator",
+		"device-orientation": "portrait"
+	},
+	{
+		"os": "Linux",
+		"platform": "LINUX",
+		"browser": "chrome",
+		"browser-version": "48",
+		"long-name": "Google Chrome"
+	},
+	{
+		"os": "Windows 10",
+		"platform": "WIN10",
+		"browser": "microsoftedge",
+		"browser-version": "13",
+		"long-name": "Microsoft Edge"
+	}
+]
